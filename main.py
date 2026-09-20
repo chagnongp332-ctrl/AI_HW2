@@ -91,7 +91,6 @@ def min_value(problem, state, depth, player, alpha, beta, deadline):
             return v, move
     return v, move
 
-## REPLACE
 def h(state, player):
     opponent = "yellow" if player == "red" else "red"
     score = 0
@@ -103,8 +102,6 @@ def h(state, player):
         opp_count = cells.count(opponent)
         empty_count = cells.count(None)
 
-        # Only consider windows that could still become
-        # a four-in-a-row for one player.
         if opp_count == 0:
             if my_count == 3 and empty_count == 1:
                 score += 1000
